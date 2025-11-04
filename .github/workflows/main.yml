@@ -1,4 +1,4 @@
-name: Terraform Validate (syntax only)
+name: Bicep CI
 
 on:
   push:
@@ -7,20 +7,16 @@ on:
 
 jobs:
   validate:
-    name: Validate Terraform
+    name: Validate Azure Bicep
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+      - name: Install Azure CLI
+        run: |
+          curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-      - name: Terraform Format Check
+      - name: Validate Bicep Syntax
         working-directory: ./iac
-        run: terraform fmt -check
-
-      - name: Terraform Validate
-        working-directory: ./iac
-        run: terraform validate -no-color || echo "Skipping validation due to no AWS credentials"
+        run: az bicep build --file main.bicep
