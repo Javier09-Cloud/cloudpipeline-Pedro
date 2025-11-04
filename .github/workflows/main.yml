@@ -1,0 +1,9 @@
+name: IaC CI
+on:
+  push:
+    branches: [ main ]
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Pipeline connected successfully!"
