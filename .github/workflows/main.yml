@@ -1,9 +1,24 @@
-name: IaC CI
+name: Terraform CI
+
 on:
   push:
     branches: [ main ]
+  pull_request:
+
 jobs:
-  example:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Pipeline connected successfully!"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Format Check
+        working-directory: ./iac
+        run: terraform fmt -check
+
+      - name: Terraform Validate
+        working-directory: ./iac
+        run: terraform validate
