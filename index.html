@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/favicon.ico">
+<meta name="theme-color" content="#0ECFBE">
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#0ECFBE">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OptiRoute AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <img
+      src="assets/optiroute-logo.png"
+      alt="OptiRoute AI Logo"
+      class="logo"
+    />
+    <h1>Smarter Routes. Smarter Driving.</h1>
+    <p class="hero-text">
+      Save time, money, and energy with AI-powered route optimization.
+      Find cheaper gas stations, track driving habits, and take smarter journeys.
+    </p>
+    <button class="cta">Get Started</button>
+  </header>
+
+  <!-- NAVIGATION CENTER -->
+  <section class="nav-section">
+    <h2>Navigation Center</h2>
+    <p class="section-subtitle">
+      Your AI-powered map, ready to guide your next trip.
+    </p>
+
+    <div id="map"></div>
+
+    <button id="voice-btn" class="voice-btn">
+      🎤 Voice Navigation
+    </button>
+    <p id="voice-status" class="voice-status">
+      Tap the button and say: “Llévame a Costco”, “Find cheap gas near me”, or “Busca restaurante de tacos”.
+    </p>
+
+    <p id="copilot-output" class="copilot-output"></p>
+  </section>
+
+  <!-- POWERFUL FEATURES -->
+  <section class="features-section">
+    <h2>Powerful Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>AI Copilot Voice</h3>
+        <p>
+          Hands-free navigation with real-time voice guidance, instant rerouting,
+          and smart driving insights — in multiple languages.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Cheapest Gas Finder</h3>
+        <p>
+          Find nearby gas stations and compare prices to save money on every trip.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Smart Recommendations</h3>
+        <p>
+          Discover restaurants, coffee spots, and driver-friendly places based on
+          your habits and feedback.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h3>Adaptive Navigation</h3>
+        <p>
+          Smarter routing with traffic insights, offline-friendly behavior, and
+          detection of road issues.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEEDBACK SUMMARY -->
+  <section class="feedback-section">
+    <h2>Trip Feedback & Learning</h2>
+    <p class="section-subtitle">
+      OptiRoute AI learns from every journey to make your next route even smarter.
+    </p>
+    <div id="feedback-log" class="feedback-log">
+      <!-- Here we will show last feedback messages -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 OptiRoute AI. All rights reserved.</p>
+  </footer>
+
+  <!-- APP SCRIPT -->
+  <script src="script.js"></script>
+
+  <!-- GOOGLE MAPS SCRIPT (REEMPLAZA LA KEY) -->
+  <script
+    async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbhirNGajKleQbtUOG0H8VKWSYuR5pzRs&callback=initMap&libraries=maps,marker"
+  ></script>
+  <link rel="manifest" href="manifest.json">
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script><script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("PWA Service Worker Registered"));
+  }
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/service-worker.js");
+  }
+</script>
+</body>
+</html>
